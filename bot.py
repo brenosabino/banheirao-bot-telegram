@@ -19,11 +19,11 @@ def start(update, context):
     # job = context.job
     context.bot.send_message(
         chat_id=update.message.chat_id,
-        text="Hi! I'm a bot"
+        text="Olá arrombado! Já tomou no cu hoje?"
     )
 
 
-def help(update, context):
+def help_command(update, context):
     update.message.reply_text('Pra falar algo digite /tts qualquermerda')
 
 
@@ -57,7 +57,7 @@ def main():
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("help", help_command))
     dp.add_handler(CommandHandler('tts', tts, pass_args=True))
 
     # log all errors
